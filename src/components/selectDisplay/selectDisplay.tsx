@@ -5,7 +5,7 @@ import data from './data';
 import './selectDisplay.css';
 
 export const SelectDisplay: FC = () => {
-  const onSelect = (item: SelectItemData) => {
+  const onSelect = (item ?: SelectItemData) => {
     console.log('Item Selected', item);
   };
   return <div className="select-display">

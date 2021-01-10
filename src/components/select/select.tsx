@@ -4,7 +4,7 @@ import { SelectProps, SelectItemData } from './selectTypes';
 import './select.css';
 
 export const Select: FC<SelectProps> = ({ items, onSelect, placeholder, imagePlaceholder, disabled }) => {
-  const [selectedItem, setSelectedItem] = useState<SelectItemData>();
+  const [selectedItem, setSelectedItem] = useState<SelectItemData | null>();
   const [isOpen, setOpen] = useState<boolean>();
 
   const itemsMap = items.reduce((map: Record<number, SelectItemData>, item) => {
@@ -13,7 +13,7 @@ export const Select: FC<SelectProps> = ({ items, onSelect, placeholder, imagePla
   }, {});
 
   const onItemSelected = (id: number) => {
-    const item = itemsMap[id];
+    const item = id === selectedItem?.id ? undefined : itemsMap[id];
     setSelectedItem(item);
     onSelect(item);
     setOpen(false);

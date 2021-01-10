@@ -14,5 +14,5 @@ export interface SelectProps {
   placeholder: string,
   imagePlaceholder: string,
   disabled: boolean,
-  onSelect: (item: SelectItemData) => void,
+  onSelect: (item ?: SelectItemData) => void,
 };
