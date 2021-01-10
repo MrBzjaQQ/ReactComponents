@@ -1,9 +1,9 @@
 import { FC, Fragment, ReactFragment, useState } from 'react';
 import SelectItem from './selectItem';
-import { SelectData, SelectItemData } from './selectTypes';
+import { SelectProps, SelectItemData } from './selectTypes';
 import './select.css';
 
-export const Select: FC<SelectData> = ({ items, onSelect }) => {
+export const Select: FC<SelectProps> = ({ items, onSelect, placeholder, imagePlaceholder, disabled }) => {
   const [selectedItem, setSelectedItem] = useState<SelectItemData>();
   const [isOpen, setOpen] = useState<boolean>();
 
@@ -33,9 +33,12 @@ export const Select: FC<SelectData> = ({ items, onSelect }) => {
   />);
 
   const selectedItemDisplay = selectedItem ? <Fragment>
-    <img className="select__picture" src={selectedItem.imgSrc} alt="select"/>
+    <img className="select__picture" src={selectedItem.imgSrc} alt="select" />
     <span className="select__item-text">{selectedItem.text}</span>
-  </Fragment> : null;
+  </Fragment> : <Fragment>
+      <img className="select__picture" src={imagePlaceholder} alt="select" />
+      <span className="select__item-text placeholder">{placeholder}</span>
+    </Fragment>;
 
   const dropdownClass = isOpen ? 'open' : '';
 

@@ -9,7 +9,10 @@ export interface SelectItemProps extends SelectItemData {
   onClick: (id: number) => void,
 };
 
-export interface SelectData {
+export interface SelectProps {
   items: SelectItemData[],
-  onSelect: (item: SelectItemData) => void
+  placeholder: string,
+  imagePlaceholder: string,
+  disabled: boolean,
+  onSelect: (item: SelectItemData) => void,
 };

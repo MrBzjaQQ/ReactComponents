@@ -9,7 +9,13 @@ export const SelectDisplay: FC = () => {
     console.log('Item Selected', item);
   };
   return <div className="select-display">
-    <Select items={data} onSelect={onSelect} />
+    <Select
+      disabled={false}
+      placeholder={"Sample placeholder"}
+      imagePlaceholder={"logo192.png"}
+      items={data}
+      onSelect={onSelect}
+    />
   </div>
 };
 
