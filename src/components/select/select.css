@@ -26,6 +26,10 @@
   border-radius: 4px;
 }
 
+.select.disabled .select__item-text.placeholder {
+  color: #606366;
+}
+
 .select__dropdown {
   position: absolute;
   left: 0;

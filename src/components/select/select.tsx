@@ -22,6 +22,10 @@ export const Select: FC<SelectProps> = ({ items, onSelect, placeholder, imagePla
   };
 
   const onSelectClick = () => {
+    if (disabled) {
+      setOpen(false);
+      return;
+    }
     setOpen(!isOpen);
   };
 
@@ -43,9 +47,10 @@ export const Select: FC<SelectProps> = ({ items, onSelect, placeholder, imagePla
     </Fragment>;
 
   const dropdownClass = isOpen ? 'open' : '';
+  const selectClass = disabled ? 'disabled' : '';
 
   return (
-    <div className="select" onClick={onSelectClick}>
+    <div className={`select ${selectClass}`} onClick={onSelectClick}>
       {selectedItemDisplay}
       <div className="select__icon select__down-icon">
         <FontAwesomeIcon icon={faChevronDown} />

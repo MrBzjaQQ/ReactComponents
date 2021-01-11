@@ -1,5 +1,12 @@
-.select-display {
-  display: flex;
-  width: 250px;
-  height: 40px;
+.select-container {
+  display: grid;
+  grid-template-columns: repeat(2, 250px);
+  grid-template-rows: 40px;
+}
+
+.select-container__display {
+  height: calc(100% - 5px);
+  width: calc(100% - 5px);
+  margin-right: 5px;
+  margin-bottom: 5px;
 }
