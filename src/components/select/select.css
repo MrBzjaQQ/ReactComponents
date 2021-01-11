@@ -55,11 +55,9 @@
   background: white;
   box-sizing: border-box;
 }
-
 .select__item:hover,
 .select__item.selected {
   background: #F1F4F8;
-  box-shadow: inset 0px -1px 0px #DFE3E9;
 }
 
 .select__item:hover .select__item-text,
@@ -73,8 +71,14 @@
 }
 
 .select__item-text {
+  width: 100%;
   margin-left: 5px;
+  text-align: left;
+  font-family: Aladin;
+  font-style: normal;
+  font-weight: 600;
   font-size: 14px;
+  line-height: 19px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -83,4 +87,32 @@
 
 .select__item-text.placeholder {
   color: #354052;
+}
+
+.select__down-icon {
+  color: #A8AAB7;
+}
+
+.select__icon {
+  height: 100%;
+  width: 40px;
+  margin-left: 5px;
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+}
+
+.select__item-checkmark {
+  display: none;
+  color: #2EA2F8;
+}
+
+.select__item .select__item-checkmark {
+  display: none;
+}
+
+.select__item.selected .select__item-checkmark {
+  display: flex;
 }

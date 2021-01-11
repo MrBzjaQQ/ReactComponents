@@ -1,6 +1,8 @@
 import { FC, Fragment, ReactFragment, useState } from 'react';
 import SelectItem from './selectItem';
 import { SelectProps, SelectItemData } from './selectTypes';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import './select.css';
 
 export const Select: FC<SelectProps> = ({ items, onSelect, placeholder, imagePlaceholder, disabled }) => {
@@ -45,6 +47,9 @@ export const Select: FC<SelectProps> = ({ items, onSelect, placeholder, imagePla
   return (
     <div className="select" onClick={onSelectClick}>
       {selectedItemDisplay}
+      <div className="select__icon select__down-icon">
+        <FontAwesomeIcon icon={faChevronDown} />
+      </div>
 
       <div className={`select__dropdown ${dropdownClass}`}>
         {childNodes}
