@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import './select.css';
 
+// TODO: Click elsewhere to close
+// TODO: Container
 export const Select: FC<SelectProps> = ({ items, onSelect, placeholder, imagePlaceholder, disabled }) => {
   const [selectedItem, setSelectedItem] = useState<SelectItemData | null>();
   const [isOpen, setOpen] = useState<boolean>();
@@ -61,4 +63,4 @@ export const Select: FC<SelectProps> = ({ items, onSelect, placeholder, imagePla
       </div>
     </div>
   );
-}
+};

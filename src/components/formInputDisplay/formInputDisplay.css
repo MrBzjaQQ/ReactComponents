@@ -1,0 +1,12 @@
+.input-container {
+  display: grid;
+  grid-template-columns: repeat(4, 250px);
+  grid-template-rows: 35px;
+}
+
+.input-container__display {
+  height: 100%;
+  width: calc(100% - 5px);
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
